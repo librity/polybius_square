@@ -1,7 +1,15 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
+
+CIPHER = [('a'..'f').to_a, ('g'..'l').to_a, ('m'..'r').to_a, ('s'..'x').to_a,
+          %w[y z] + (0..3).to_a, (4..9).to_a].freeze
 
 describe PolybiusSquare do
   it 'initialize matrix' do
+    square = PolybiusSquare.new
+
+    expect(square.cipher).to eq(CIPHER)
   end
 
   it 'encrypt polibio' do
